@@ -3,12 +3,19 @@
 {{#link-to 'contact'}}Contact Us{{/link-to}}
 <h1>Welcome to Super Rentals</h1>
 
-<p>We hope you find exactly what you're looking for in a place to stay.</p>
+<h3>Available Rentals</h3>
 
 <ul>
-  {{#each model as |rental|}}
+  {{#each model.rentals as |rental|}}
     {{rental-tile update="update" rental=rental destroyRental="destroyRental"}}
   {{/each}}
 </ul>
 
 {{new-rental save="save"}}
+
+<h3>Cities</h3>
+<ul>
+  {{#each model.cities as |city|}}
+    <li>{{city.name}}</li>
+  {{/each}}
+</ul>
